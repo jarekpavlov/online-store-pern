@@ -1,0 +1,6 @@
+export const ADMIN_ROTE='/admin'
+export const LOGIN_ROTE='/login'
+export const REGISTRATION_ROTE='/registration'
+export const SHOP_ROTE='/'
+export const BASKET_ROTE='/basket'
+export const DEVICE_ROTE='/device'
