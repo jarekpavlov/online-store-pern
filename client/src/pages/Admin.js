@@ -1,10 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {Button, Container} from "react-bootstrap";
+import CreateType from "../components/modals/CreateType";
+import CreateBrand from "../components/modals/CreateBrand";
+import CreateDevice from "../components/modals/CreateDevice";
 
 const Admin = () => {
+    const [brandVisible, setBrandVisible] = useState(false);
+    const [typeVisible, setTypeVisible] = useState(false);
+    const [deviceVisible, setDeviceVisible] = useState(false);
+
+
     return (
-        <div>
-            ADMIN
-        </div>
+        <Container className="d-flex flex-column">
+            <Button variant="outline-dark" className="mt-4 p-2" onClick={() => setTypeVisible(true)}>Add type</Button>
+            <Button variant="outline-dark" className="mt-4 p-2" onClick={() => setBrandVisible(true)}>Add brand</Button>
+            <Button variant="outline-dark" className="mt-4 p-2" onClick={() => setDeviceVisible(true)}>Add device</Button>
+            <CreateBrand onHide={() => setBrandVisible(false)} show={brandVisible}/>
+            <CreateDevice onHide={() => setDeviceVisible(false)} show={deviceVisible}/>
+            <CreateType onHide={() => setTypeVisible(false)} show={typeVisible}/>
+        </Container>
     );
 };
 
